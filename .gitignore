@@ -1,0 +1,46 @@
+# Entornos y secretos
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (express, nestjs)
+node_modules/
+dist/
+npm-debug.log*
+
+# .NET (csharp)
+bin/
+obj/
+
+# Java/Maven (springboot)
+target/
+
+# Go
+authlab-go
+
+# Terraform
+.terraform/
+.terraform.tfstate.lock.info
+*.tfstate
+*.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Runtime / logs sueltos
+.uvicorn.pid
+.uvicorn.log
+*.log
+
+# macOS
+.DS_Store
+
+# Configuracion local de Claude Code (permisos/estado de sesion, no del proyecto)
+.claude/
