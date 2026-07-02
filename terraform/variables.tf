@@ -10,8 +10,8 @@ variable "azure_app_display_name" {
   default     = "multi-cloud-sso-lab"
 }
 
-# Un callback/redirect URI por cada uno de los 4 stacks del lab (ver
-# auth/SETUP.md). Los 4 usan /auth/{cloud}/callback.
+# Un callback/redirect URI por cada uno de los 6 stacks del lab (ver
+# auth/SETUP.md). Los 6 usan /auth/{cloud}/callback.
 variable "aws_callback_urls" {
   description = "Callback URLs a registrar en el App Client de Cognito"
   type        = list(string)
@@ -20,6 +20,8 @@ variable "aws_callback_urls" {
     "http://localhost:8003/auth/aws/callback", # nestjs
     "http://localhost:8004/auth/aws/callback", # express
     "http://localhost:8006/auth/aws/callback", # php
+    "http://localhost:8007/auth/aws/callback", # slim
+    "http://localhost:8008/auth/aws/callback", # laravel
   ]
 }
 
@@ -31,6 +33,8 @@ variable "aws_signout_urls" {
     "http://localhost:8003/aws",
     "http://localhost:8004/aws",
     "http://localhost:8006/aws",
+    "http://localhost:8007/aws",
+    "http://localhost:8008/aws",
   ]
 }
 
@@ -42,5 +46,7 @@ variable "azure_redirect_uris" {
     "http://localhost:8003/auth/azure/callback", # nestjs
     "http://localhost:8004/auth/azure/callback", # express
     "http://localhost:8006/auth/azure/callback", # php
+    "http://localhost:8007/auth/azure/callback", # slim
+    "http://localhost:8008/auth/azure/callback", # laravel
   ]
 }

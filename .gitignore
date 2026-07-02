@@ -13,15 +13,9 @@ node_modules/
 dist/
 npm-debug.log*
 
-# .NET (csharp)
-bin/
-obj/
-
-# Java/Maven (springboot)
-target/
-
-# Go
-authlab-go
+# PHP (slim, laravel)
+vendor/
+composer.lock
 
 # Terraform
 .terraform/

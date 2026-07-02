@@ -1,11 +1,11 @@
-# Wrapper fino sobre docker compose: las 4 implementaciones (python,
-# nestjs, express, php) corren siempre en contenedor, para comparar los
-# frameworks en igualdad de condiciones.
+# Wrapper fino sobre docker compose: las 6 implementaciones (python,
+# nestjs, express, php, slim, laravel) corren siempre en contenedor,
+# para comparar los frameworks en igualdad de condiciones.
 #
 # Por defecto opera sobre todos los stacks. Para uno solo, pasa STACK:
 #   make up STACK=python
 #   make down STACK=express
-#   make logs STACK=php
+#   make logs STACK=laravel
 
 STACK ?=
 
@@ -22,6 +22,8 @@ ifeq ($(STACK),)
 	@echo "nestjs:      http://localhost:8003"
 	@echo "express:     http://localhost:8004"
 	@echo "php:         http://localhost:8006"
+	@echo "slim:        http://localhost:8007"
+	@echo "laravel:     http://localhost:8008"
 else
 	docker compose ps $(STACK)
 endif
