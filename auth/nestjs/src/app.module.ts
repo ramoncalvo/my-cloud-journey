@@ -1,9 +1,12 @@
 import { Module } from "@nestjs/common";
+
 import { AppController } from "./app.controller";
-import { AuthService } from "./auth.service";
+import { AwsModule } from "./aws/aws.module";
+import { AzureModule } from "./azure/azure.module";
+import { GcpModule } from "./gcp/gcp.module";
 
 @Module({
+  imports: [AwsModule, AzureModule, GcpModule],
   controllers: [AppController],
-  providers: [AuthService],
 })
 export class AppModule {}
