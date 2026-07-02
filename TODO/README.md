@@ -18,3 +18,5 @@ Conceptos + ejemplos de negocio, uno por tema. Antes era un solo archivo
 13. [Patrones de diseño](13-patrones-diseno.md)
 14. [Arquitecturas de software más comunes](14-arquitecturas-software.md)
 15. [Algoritmos comunes para problemas de full-stack/backend](15-algoritmos-comunes.md)
+16. [Patrones de frontend: React, Angular, Vue, Svelte](16-patrones-frontend.md)
+17. [Patrones de backend: Go, Python, NestJS](17-patrones-backend.md)
