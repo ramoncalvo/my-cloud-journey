@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ cloud_label }} - privado{% endblock %}
+{% block content %}
+  <span class="badge">Vista privada</span>
+  <h1>{{ cloud_label }}</h1>
+  <p>Sesion valida via SSO ({{ cloud_label }}). Claims recibidas del proveedor de identidad:</p>
+  <pre>{{ user }}</pre>
+  <a class="btn logout" href="/auth/{{ cloud }}/logout">Cerrar sesion</a>
+{% endblock %}

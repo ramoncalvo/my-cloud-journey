@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Multi-cloud SSO Lab{% endblock %}
+{% block content %}
+  <p>Vista publica de bienvenida. Cada nube tiene una vista publica y una privada protegida por su propio SSO (OIDC).</p>
+  {% for slug, label in clouds.items() %}
+    <div class="card">
+      <h2>{{ label }}</h2>
+      <a href="/{{ slug }}">Vista publica</a> &middot;
+      <a href="/{{ slug }}/private">Vista privada</a>
+    </div>
+  {% endfor %}
+{% endblock %}

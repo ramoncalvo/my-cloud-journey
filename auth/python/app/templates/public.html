@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ cloud_label }} - publico{% endblock %}
+{% block content %}
+  <span class="badge">Vista publica</span>
+  <h1>{{ cloud_label }}</h1>
+  <p>Esta pagina es publica, no requiere autenticacion.</p>
+
+  {% if user %}
+    <p>Ya tienes sesion iniciada en {{ cloud_label }} como <strong>{{ user.get("email", user.get("preferred_username", "usuario")) }}</strong>.</p>
+    <a class="btn" href="/{{ cloud }}/private">Ir a la vista privada</a>
+    <a class="btn logout" href="/auth/{{ cloud }}/logout">Cerrar sesion</a>
+  {% else %}
+    <a class="btn" href="/auth/{{ cloud }}/login">Iniciar sesion con {{ cloud_label }}</a>
+  {% endif %}
+{% endblock %}
