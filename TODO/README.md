@@ -20,3 +20,6 @@ Conceptos + ejemplos de negocio, uno por tema. Antes era un solo archivo
 15. [Algoritmos comunes para problemas de full-stack/backend](15-algoritmos-comunes.md)
 16. [Patrones de frontend: React, Angular, Vue, Svelte](16-patrones-frontend.md)
 17. [Patrones de backend: Go, Python, NestJS](17-patrones-backend.md)
+18. [CI/CD: tutorial con GitHub Actions y variantes](18-cicd-github-actions.md)
+19. [Seguridad: cloud, on-premise e híbrido](19-seguridad-cloud-onprem.md)
+20. [Vulnerabilidades conocidas: cloud y on-premise, con soluciones](20-vulnerabilidades-cloud-onprem.md)
