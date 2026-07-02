@@ -1,11 +1,11 @@
-# Wrapper fino sobre docker compose: las 7 implementaciones (python,
-# csharp, springboot, nestjs, express, go, php) corren siempre en
-# contenedor, para comparar los frameworks en igualdad de condiciones.
+# Wrapper fino sobre docker compose: las 4 implementaciones (python,
+# nestjs, express, php) corren siempre en contenedor, para comparar los
+# frameworks en igualdad de condiciones.
 #
 # Por defecto opera sobre todos los stacks. Para uno solo, pasa STACK:
 #   make up STACK=python
-#   make down STACK=go
-#   make logs STACK=springboot
+#   make down STACK=express
+#   make logs STACK=php
 
 STACK ?=
 
@@ -19,11 +19,8 @@ up: build
 	docker compose up -d $(STACK)
 ifeq ($(STACK),)
 	@echo "python:      http://localhost:8000"
-	@echo "csharp:      http://localhost:8001"
-	@echo "springboot:  http://localhost:8002"
 	@echo "nestjs:      http://localhost:8003"
 	@echo "express:     http://localhost:8004"
-	@echo "go:          http://localhost:8005"
 	@echo "php:         http://localhost:8006"
 else
 	docker compose ps $(STACK)

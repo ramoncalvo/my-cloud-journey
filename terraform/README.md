@@ -47,6 +47,6 @@ un User Pool y un App Registration nuevos (con nombre fijo
 
 ## Variables
 
-Todas tienen defaults pensados para los 7 stacks de `auth/` (puertos
-8000-8006); solo hace falta tocar `variables.tf` si cambias esos puertos
-o quieres apuntar a otra region de AWS (`aws_region`).
+Todas tienen defaults pensados para los stacks de `auth/` (puertos 8000,
+8003, 8004, 8006); solo hace falta tocar `variables.tf` si cambias esos
+puertos o quieres apuntar a otra region de AWS (`aws_region`).

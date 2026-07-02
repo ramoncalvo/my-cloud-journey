@@ -29,3 +29,4 @@ resource "aws_cognito_user_pool_client" "this" {
   callback_urls = var.aws_callback_urls
   logout_urls   = var.aws_signout_urls
 }
+

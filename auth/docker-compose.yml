@@ -7,32 +7,6 @@ services:
     environment:
       - BASE_URL=http://localhost:8000
 
-  csharp:
-    build: ./csharp
-    ports:
-      - "8001:8080"
-    env_file: .env
-    environment:
-      - BASE_URL=http://localhost:8001
-
-  springboot:
-    build: ./springboot
-    ports:
-      - "8002:8080"
-    env_file: .env
-    environment:
-      # Spring Security valida al arrancar que estos campos no esten
-      # vacios (Python/C# solo fallan al hacer login). Si el .env trae
-      # valores vacios (nube todavia no configurada), se sustituye por
-      # un placeholder no vacio para que la app arranque igual; el login
-      # de esa nube fallara igualmente al intentarlo, mas tarde.
-      - AWS_COGNITO_CLIENT_ID=${AWS_COGNITO_CLIENT_ID:-unset}
-      - AWS_COGNITO_CLIENT_SECRET=${AWS_COGNITO_CLIENT_SECRET:-unset}
-      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID:-unset}
-      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET:-unset}
-      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-unset}
-      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET:-unset}
-
   nestjs:
     build: ./nestjs
     ports:
@@ -48,14 +22,6 @@ services:
     env_file: .env
     environment:
       - BASE_URL=http://localhost:8004
-
-  go:
-    build: ./go
-    ports:
-      - "8005:8005"
-    env_file: .env
-    environment:
-      - BASE_URL=http://localhost:8005
 
   php:
     build: ./php
