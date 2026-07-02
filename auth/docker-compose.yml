@@ -15,38 +15,10 @@ services:
     environment:
       - BASE_URL=http://localhost:8003
 
-  express:
-    build: ./express
+  go:
+    build: ./go
     ports:
-      - "8004:8004"
+      - "8005:8005"
     env_file: .env
     environment:
-      - BASE_URL=http://localhost:8004
-
-  php:
-    build: ./php
-    ports:
-      - "8006:8006"
-    env_file: .env
-    environment:
-      - BASE_URL=http://localhost:8006
-
-  slim:
-    build: ./slim
-    ports:
-      - "8007:8007"
-    env_file: .env
-    environment:
-      - BASE_URL=http://localhost:8007
-
-  laravel:
-    build: ./laravel
-    ports:
-      - "8008:8008"
-    env_file: .env
-    environment:
-      - BASE_URL=http://localhost:8008
-      # El .env por defecto de Laravel 11 usa SESSION_DRIVER=database
-      # (necesitaria migraciones + DB). file mantiene el lab sin
-      # dependencias externas, igual que el resto de stacks.
-      - SESSION_DRIVER=file
+      - BASE_URL=http://localhost:8005

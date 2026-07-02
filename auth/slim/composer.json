@@ -1,7 +1,0 @@
-{
-    "require": {
-        "slim/slim": "^4.13",
-        "slim/psr7": "^1.7",
-        "league/oauth2-client": "^2.7"
-    }
-}
