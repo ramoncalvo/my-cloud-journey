@@ -26,3 +26,5 @@ Conceptos + ejemplos de negocio, uno por tema. Antes era un solo archivo
 21. [Terraform: ruta de aprendizaje](21-terraform-aprendizaje.md)
 22. [Ciberseguridad: fundamentos, ofensiva, defensiva y gobernanza](22-ciberseguridad.md)
 23. [Redes en la nube: firewalls, whitelists, balanceadores e IPs](23-redes-cloud.md)
+24. [Docker: conceptos, buenas prácticas y seguridad](24-docker.md)
+25. [Kubernetes: conceptos, operación y seguridad](25-kubernetes.md)
