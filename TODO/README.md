@@ -24,3 +24,4 @@ Conceptos + ejemplos de negocio, uno por tema. Antes era un solo archivo
 19. [Seguridad: cloud, on-premise e híbrido](19-seguridad-cloud-onprem.md)
 20. [Vulnerabilidades conocidas: cloud y on-premise, con soluciones](20-vulnerabilidades-cloud-onprem.md)
 21. [Terraform: ruta de aprendizaje](21-terraform-aprendizaje.md)
+22. [Ciberseguridad: fundamentos, ofensiva, defensiva y gobernanza](22-ciberseguridad.md)
