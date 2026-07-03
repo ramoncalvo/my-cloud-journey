@@ -6,9 +6,42 @@
 
   1. Una VPC (AWS/GCP) o VNet (Azure) es tu red privada aislada dentro de la nube — nadie fuera de ella puede alcanzar tus recursos salvo que tú abras una ruta explícita. Todo lo demás de este doc vive dentro de esa red.
 
-- **Planeación de CIDR (rangos de IP)**
+- **CIDR explicado muy simple (como para un niño)**
 
-  1. Definir `10.0.0.0/16` para la VPC completa (65,536 IPs) y sub-dividirla en `10.0.1.0/24` (subnet pública), `10.0.2.0/24` (subnet privada de apps), `10.0.3.0/24` (subnet privada de datos) — planear el rango *antes* de crear nada, porque cambiar el CIDR de una VPC ya poblada de recursos es doloroso o imposible sin recrear todo.
+  Una IP es como la dirección de una casa: 4 números separados por puntos,
+  por ejemplo `10.0.0.5`. Un CIDR es una forma corta de decir **"reservo
+  todas estas casas de una sola vez"**, en vez de anotarlas de una en una.
+
+  Imagina un edificio de apartamentos:
+  - El edificio completo tiene una dirección fija ("Calle 10, edificio 0").
+  - Adentro hay muchos apartamentos numerados (0, 1, 2... hasta 255).
+
+  `10.0.0.0/24` significa: *"la dirección del edificio (10.0.0) está fija,
+  y puedo usar cualquier apartamento del 0 al 255 dentro de él"* → 256
+  direcciones (un edificio completo).
+
+  `10.0.0.0/16` significa: *"solo los primeros 2 números (10.0) están
+  fijos, los otros 2 números los puedo repartir como quiera"* → eso es
+  como tener un **vecindario entero de 256 edificios**, cada uno con 256
+  apartamentos → 256 × 256 = 65,536 direcciones en total.
+
+  **La parte que confunde a todo el mundo al empezar**: el número después
+  de la `/` **no** es "qué tan grande" es el rango — es al revés. Mientras
+  **más chico** es ese número, **más grande** es el rango (menos partes
+  de la dirección están "fijas", más partes quedan libres para repartir).
+  Un `/8` es un país entero de vecindarios; un `/32` es una sola casa (ni
+  siquiera un apartamento — una dirección exacta, sin nada libre).
+
+  | CIDR | En la analogía | Cuántas direcciones IP |
+  |---|---|---|
+  | `/32` | Una sola casa exacta | 1 |
+  | `/24` | Un edificio completo | 256 |
+  | `/16` | Un vecindario de 256 edificios | 65,536 |
+  | `/8` | Una ciudad de 256 vecindarios | 16,777,216 |
+
+- **Planeación de CIDR en la práctica**
+
+  1. Definir `10.0.0.0/16` para la VPC completa (65,536 IPs, el "vecindario") y sub-dividirla en "edificios" más pequeños: `10.0.1.0/24` (subnet pública), `10.0.2.0/24` (subnet privada de apps), `10.0.3.0/24` (subnet privada de datos) — planear el rango *antes* de crear nada, porque cambiar el CIDR de una VPC ya poblada de recursos es doloroso o imposible sin recrear todo.
 
 - **Subnets públicas vs privadas**
 
